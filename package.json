@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "test:ui": "vitest --ui",
+    "test:ui": "vitest --ui --watch",
     "test:coverage": "vitest --coverage",
     "lint": "eslint --ext ts,tsx .",
     "lint:fix": "eslint --ext ts,tsx . --fix",
