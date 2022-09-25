@@ -1,0 +1,40 @@
+button {
+  @apply px-4 py-2 rounded-md;
+  @apply inline-flex justify-center items-center flex-wrap;
+  @apply shadow-md cursor-pointer;
+
+  @apply transition-all duration-100 ease-in-out outline-none;
+
+  animation: button-pop 250ms ease-out;
+
+  background-color: #ea9a97;
+  color: #e0def4;
+
+  &:disabled {
+    @apply bg-gray-300 text-gray-500 !important;
+  }
+
+  &:active:hover,
+  &:active:focus {
+    animation: none;
+    transform: scale(0.95);
+  }
+
+  [role='icon'] {
+    /* @apply inline-block mr-1 w-4 h-4 -my-1 -ml-1; */
+
+    @apply inline-block mr-2 h-5 w-5;
+  }
+}
+
+@keyframes button-pop {
+  0% {
+    transform: scale(0.95);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

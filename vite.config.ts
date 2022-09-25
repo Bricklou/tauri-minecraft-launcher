@@ -7,11 +7,14 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), eslintPlugin({
-    fix: true,
-    emitError: true,
-    include: ["./src/**/*.{ts,tsx}"]
-  })],
+  plugins: [
+    react(),
+    eslintPlugin({
+      fix: true,
+      emitError: true,
+      include: ['./src/**/*.{ts,tsx}']
+    })
+  ],
   resolve: {
     alias: {
       '@': './src/'
@@ -20,8 +23,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    setupFiles: './src/setupTest.ts',
     coverage: {
       reporter: ['text', 'json', 'html']
-    }
+    },
+    watch: false
   }
 })

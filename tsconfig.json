@@ -16,10 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@*": ["./src/*"]
     },
     "typeRoots": ["./src/typings"]
   },
-  "include": ["src"],
+  "include": ["src", ".storybook"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
