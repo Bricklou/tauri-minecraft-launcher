@@ -29,8 +29,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "com.github.bricklou.minecraft-launcher",
+      "longDescription": "A Minecraft Launcher made in Rust",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",

@@ -1,0 +1,23 @@
+.avatar {
+  @apply rounded-full shadow-sm;
+  @apply w-14 h-14 relative;
+
+  &:not(:has(> img)) {
+    @apply bg-gray-600;
+  }
+
+  &:has(> .loading)::before {
+    @apply w-10 h-10 bg-gray-800 rounded-full block absolute top-2 left-2;
+    @apply animate-ping;
+    content: ' ';
+    z-index: -1;
+  }
+
+  .spinner {
+    @apply m-auto align-middle h-full;
+  }
+
+  img {
+    @apply transition-opacity duration-100 rounded-full;
+  }
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { describe, expect, test, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import Button from '.'
-import { Info } from 'react-feather'
+import { Button } from '.'
+import { Info } from 'lucide-react'
 
 describe('Button component', () => {
   const BTN_TEXT = "I'm a button"

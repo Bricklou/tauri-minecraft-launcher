@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react'
-import type { Icon } from 'react-feather'
+import type { Icon } from 'lucide-react'
 import './button.module.css'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -7,7 +7,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   endIcon?: Icon
 }
 
-function Button({
+export function Button({
   startIcon: StartIcon,
   endIcon: EndIcon,
   children,
@@ -23,5 +23,3 @@ function Button({
     </button>
   )
 }
-
-export default Button

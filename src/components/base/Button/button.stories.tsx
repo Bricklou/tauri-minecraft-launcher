@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import Button from '.'
-import { Info } from 'react-feather'
+import { Button } from '.'
+import { Info } from 'lucide-react'
 
 export default {
   title: 'Components/Button',
