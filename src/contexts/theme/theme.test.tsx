@@ -9,7 +9,7 @@ function Content(): JSX.Element {
     <div>
       <button
         onClick={() => {
-          setCurrentTheme(themeType === 'default' ? 'cyan' : 'default')
+          setCurrentTheme(themeType === 'coffee' ? 'automn' : 'coffee')
         }}
       >
         Toggle theme
@@ -33,9 +33,9 @@ describe('Theme context', () => {
   })
 
   test('when page is initialized', () => {
-    test('then show the default theme', () => {
-      // "Theme is default" text is only show when the default theme is active
-      expect(screen.getByText(/Theme is default/i)).toBeTruthy()
+    test('then show the coffee theme', () => {
+      // "Theme is coffee" text is only show when the coffee theme is active
+      expect(screen.getByText(/Theme is coffee/i)).toBeTruthy()
     })
   })
 
@@ -44,9 +44,9 @@ describe('Theme context', () => {
       fireEvent.click(screen.getByText(/Toggle theme/i))
     })
 
-    test('then uses the cyan mode', () => {
-      // "Theme is cyan" text is only show when the cyan theme is active
-      expect(screen.getByText(/Theme is cyan/i)).toBeTruthy()
+    test('then uses the automn mode', () => {
+      // "Theme is automn" text is only show when the automn theme is active
+      expect(screen.getByText(/Theme is automn/i)).toBeTruthy()
     })
   })
 })

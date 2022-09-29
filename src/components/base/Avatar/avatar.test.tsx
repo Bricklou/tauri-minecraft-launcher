@@ -24,7 +24,7 @@ describe('Avatar component', () => {
 
       setTimeout(() => {
         expect(el.firstChild).instanceOf(HTMLImageElement)
-      }, 10)
+      }, 100)
     })
   })
 })

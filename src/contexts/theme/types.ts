@@ -1,18 +1,10 @@
-export interface Theme {
-  background: Color
-}
-
 export enum Color {
   WHITE = '#FFF'
 }
-
-export type ThemeType = 'default' | 'cyan'
-
-export const THEMES: Record<ThemeType, Theme> = {
-  default: {
-    background: Color.WHITE
-  },
-  cyan: {
-    background: Color.WHITE
-  }
+export type Theme<C extends Record<string, string>> = {
+  colors?: C
+  background: keyof typeof Color | keyof (C extends undefined ? object : C)
 }
+
+export type { ThemeType } from './colors'
+export { THEMES } from './colors'
