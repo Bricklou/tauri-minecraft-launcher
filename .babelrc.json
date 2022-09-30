@@ -1,0 +1,7 @@
+{
+  "sourceType": "unambiguous",
+  "presets": [
+    "@babel/preset-typescript"
+  ],
+  "plugins": []
+}

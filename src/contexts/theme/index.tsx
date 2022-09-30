@@ -1,27 +1,43 @@
 import React, { Dispatch, SetStateAction, useContext } from 'react'
-import { THEMES, ThemeType } from './types'
+import { THEMES, ThemeStyle, ThemeType } from './types'
 
 interface ThemeContextProps {
   themeType: ThemeType
-  theme: typeof THEMES[ThemeContextProps['themeType']]
+  theme: ThemeStyle
   setCurrentTheme: Dispatch<SetStateAction<ThemeType>>
+}
+
+function parseThemeColors<T extends typeof THEMES[ThemeContextProps['themeType']]>(
+  theme: T
+): ThemeStyle {
+  const parsedTheme: ThemeStyle = structuredClone(theme.style)
+
+  const colors = theme.colors as Record<string, string>
+  for (const [k, v] of Object.entries(parsedTheme)) {
+    parsedTheme[k as keyof ThemeStyle] = colors ? colors[v] : '#fff'
+  }
+
+  return parsedTheme
 }
 
 export const ThemeContext = React.createContext<ThemeContextProps>({
   themeType: 'coffee',
-  theme: THEMES['coffee'],
+  theme: THEMES['coffee']['style'],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setCurrentTheme: () => {}
 })
 
-export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = React.useState<ThemeType>('coffee')
+export const ThemeProvider: React.FC<React.PropsWithChildren & { defaultTheme?: ThemeType }> = ({
+  children,
+  defaultTheme
+}) => {
+  const [currentTheme, setCurrentTheme] = React.useState<ThemeType>(defaultTheme ?? 'coffee')
 
   return (
     <ThemeContext.Provider
       value={{
         themeType: currentTheme,
-        theme: THEMES[currentTheme],
+        theme: parseThemeColors(THEMES[currentTheme]),
         setCurrentTheme
       }}
     >

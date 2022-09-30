@@ -7,5 +7,7 @@ export const coffee = createTheme({
     CARAMEL: '#C69B7B',
     COFEE: '#826F66'
   },
-  background: 'CARAMEL'
+  style: {
+    background: 'CARAMEL'
+  }
 })

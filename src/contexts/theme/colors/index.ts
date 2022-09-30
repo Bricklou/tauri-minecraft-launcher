@@ -6,4 +6,3 @@ import { createThemesList } from './type'
 export const THEMES = createThemesList({ automn, coffee, light })
 
 export type ThemeType = keyof typeof THEMES
-THEMES['automn'].colors?.RED

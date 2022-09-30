@@ -4,5 +4,7 @@ export const automn = createTheme({
   colors: {
     RED: 'red'
   },
-  background: 'RED'
+  style: {
+    background: 'RED'
+  }
 })
