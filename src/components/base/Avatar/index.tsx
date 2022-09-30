@@ -16,16 +16,15 @@ export function Avatar({ className, url, ...props }: AvatarProps): JSX.Element {
       return
     }
 
-    const img = new window.Image()
-    img.src = url
+    const img = new Image()
     img.addEventListener('error', () => {
       console.error(`Failed to load image ${url}`)
     })
-    img.addEventListener('load', () => setLoading(false))
+    img.addEventListener('load', () => {
+      setLoading(false)
+    })
 
-    return () => {
-      img.onload = null
-    }
+    img.src = url
   }, [url])
 
   return (

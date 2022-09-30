@@ -11,20 +11,4 @@ describe('Avatar component', () => {
 
     expect(el.firstChild).instanceOf(SVGSVGElement)
   })
-
-  describe('wait for image to preload', () => {
-    beforeAll(async () => {
-      await fetch('https://source.unsplash.com/random/256x256')
-    })
-
-    test('show loading state', () => {
-      render(<Avatar url={'https://source.unsplash.com/random/256x256'} />)
-
-      const el = screen.getByRole('img')
-
-      setTimeout(() => {
-        expect(el.firstChild).instanceOf(HTMLImageElement)
-      }, 100)
-    })
-  })
 })
